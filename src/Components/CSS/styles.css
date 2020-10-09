@@ -1,0 +1,162 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent{
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+textarea{
+  resize: none;
+  outline: none;
+}
+
+.details{
+ flex-grow: 2;
+  
+}
+
+label{
+  color: #222222;
+  font-size: large;
+}
+.name{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    background-color: white;
+    color: rgb(10, 10, 10);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.details h1{
+  color: #4C3E79;
+}
+
+
+.btt span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btt span:after {
+  content: '\21BB';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btt:hover span {
+  padding-right: 25px;
+}
+
+.btt:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.pwd{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btt {
+  background-color: white;
+  border: 5cm;
+  color: #4C3E79;
+  padding: 10px 20px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #4C3E79;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer; 
+  border-radius: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 22px;
+}
+.btt:hover{
+  color: white;
+    background-color: #4C3E79;
+    border: 1px solid white;
+}
+
+.bttn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bttn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.bttn:hover span {
+  padding-right: 25px;
+}
+
+.bttn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.bttn {
+  background-color: #4C3E79;
+  border: 5cm;
+  color: white;
+  padding: 10px 20px;
+  outline: none;
+  text-align: center;
+  border: 1px solid white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer; 
+  border-radius: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 22px;
+}
+
+.bttn:hover{
+    color: #4C3E79;
+    background-color: #ffff;
+    border: 1px solid #4C3E79;
+  }
+
+  
+  h1{
+    font-size: 25px;
+  }
+ 
+
+  @media screen and (max-width:900px){
+  
+      .main-contianer{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly; 
+        
+      }
+    
+    }
