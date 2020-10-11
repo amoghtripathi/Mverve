@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './CSS/styles.css'
-
+import * as Yup from "yup";
 
 
 
@@ -63,19 +63,23 @@ class Details extends Component {
     }
 
     handleSubmit = (event) => {
-        alert(`${this.state.firstName} ${this.state.lastName}  Registered Successfully !!!!`)
-        console.log(this.state);
-        this.setState({
-            firstName: "",
-            lastName: "",
-            age: "",
-            email: "",
-            Mobile: "",
-            password: "",
-            cnfpassword: "",
-        })
-     event.preventDefault()
-        
+        event.preventDefault();
+        if(this.state.password === ""){ 
+             alert("enter passsword") 
+        }
+        else{
+            alert(`${this.state.firstName} ${this.state.lastName}  Registered Successfully !!!!`)
+            console.log(this.state);
+            this.setState({
+                firstName: "",
+                lastName: "",
+                age: "",
+                email: "",
+                Mobile: "",
+                password: "",
+                cnfpassword: "",
+            })
+        }
     }
 
     handlereset = (event) => {
