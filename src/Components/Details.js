@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './CSS/styles.css'
-import banner from "./img/banner.png";
 
 
 
@@ -13,6 +12,7 @@ class Details extends Component {
             firstName: "",
             lastName: "",
             password: "",
+            cnfpassword: "",
             Mobile: "",
             age:"",
             email: "",
@@ -45,7 +45,11 @@ class Details extends Component {
             password: event.target.value
         })
     }
-
+    cnfpasswordhandler = (event) => {
+        this.setState({
+            cnfpassword: event.target.value
+        })
+    }
     agehandler = (event) => {
         this.setState({
             age: event.target.value
@@ -68,6 +72,7 @@ class Details extends Component {
             email: "",
             Mobile: "",
             password: "",
+            cnfpassword: "",
         })
      event.preventDefault()
         
@@ -79,6 +84,7 @@ class Details extends Component {
             firstName: "",
             lastName: "",
             password: "",
+            cnfpassword: "",
             age: "",
             email: "",
             Mobile: "",
@@ -89,64 +95,67 @@ class Details extends Component {
 
     render() {
         return (
-            <div className="parent">
-                <div className="banner">
-                    <img src={banner} alt="MVERVE" />
-                </div>
-
-                <div className="details">
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Create an account</h1>
-                    
-                    <div className="personaldetails">
-                        <label for="fname">FirstName </label> 
-                        <input type="text" className="name" id="fname"  
-                        onChange={this.firsthandler} placeholder="FirstName" /><br />
-
-                        <label>LastName </label> 
-                        <input type="text" className="name" 
-                        onChange={this.lasthandler} placeholder="LastName" /><br />
-
-                        <label>Age </label> 
-                        <input type="number" className="name"   min="1" max="100" placeholder="Age(1-100)"
-                        onChange={this.agehandler}  /><br />
-                    </div>
-                    
-                    <div className="contact">
-                        <label>Mobile Number </label>
-                        <input type="tel" pattern="[0-9]{10}" placeholder="xxxxx xxxxx"
-                        onChange={this.mobilehandler} className="name"  required /><br />
-
-                        <label>Email </label>
-                        <input type="email" className="name" 
-                        onChange={this.emailhandler} /><br />
-                    </div>
-
-                    <div className="description">
-                        <label>Description</label>
-                        <textarea rows="5" cols="80" maxLength="120" />
-                        
-                    </div>
-                    
-                    <div className="pwd">
-                        <label>Password </label> 
-                        <input type="password" className="name"
-                        onChange={this.passwordhandler} placeholder="Password" />
-
-                        <label>Confirm Password </label> 
-                        <input type="password"  className="name" placeholder=" Confirm Password" /><br />
-                    </div>
-                    
-                    <button className="btt" onClick={this.handlereset}><span>RESET </span></button>
-                    <button className="bttn" type="submit" ><span>SUBMIT </span></button>
-                  
-                </form>
-                </div>
-                
+            <div className="container">
+            <div className="header">
+                <h2>Create an account</h2>
             </div>
-
-          
+        
+        <form  className="form" >
+            <div className="personalDetails">
+                <div className="form-control psndtls"> 
+                    <label htmlFor="Fname">First Name</label>
+                    <input type="text" id="Fname"
+                        onChange={this.firsthandler} value={this.state.firstName} placeholder="First Name" />
+                </div>
+                <div className="form-control psndtls">
+                    <label htmlFor="Lname">Last Name</label>
+                    <input type="text" id="Lname" 
+                        onChange={this.lasthandler} value={this.state.lastName} placeholder="Last Name" />
+                </div>
+                <div className="form-control agedtls">
+                    <label htmlFor="age">Age</label>
+                    <input type="number" id="age" placeholder="18 - 100" 
+                        onChange={this.agehandler} value={this.state.age} min="18" max="100" />
+                </div>
+            </div>
+            <div className="contact">
+                <div className="form-control cntctdtls">
+                    <label htmlFor="mobnum">Mobile Number</label>
+                    <input type="tel" id="mobnum" placeholder="xxxxx xxxxx" 
+                        onChange={this.mobilehandler} value={this.state.Mobile} pattern="[0-9]{10}" />
+                </div>
+                <div className="form-control cntctdtls">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email"
+                        onChange={this.emailhandler} value={this.state.email} placeholder="abc@xxx.zzz" />
+                </div>
+            </div>
+            <div className="descpt">
+                <div className="form-control textarea">
+                    <label htmlFor="description">Description</label>
+                    <textarea id="description" rows="5" cols="80" maxLength="120" />
+                </div>
+            </div>
+            <div className="private">
+                <div className="form-control cntctdtls">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password" 
+                    onChange={this.passwordhandler} value={this.state.password} />
+                </div>
+                <div className="form-control cntctdtls">
+                    <label htmlFor="cnfpassword">Confirm Password</label>
+                    <input type="password" id="cnfpassword" 
+                    onChange={this.cnfpasswordhandler} value={this.state.cnfpassword} />    
+                </div>
+            </div>
             
+            
+            <button className="btt" onClick={this.handlereset}><span>RESET </span></button>
+            <button onClick={this.handleSubmit} className="bttn" type="submit" ><span>SUBMIT </span></button>
+        
+        </form>
+        </div>
+        
         )
     }
 }

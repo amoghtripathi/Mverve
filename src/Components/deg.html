@@ -1,0 +1,52 @@
+<div className="container">
+    <div className="header">
+        <h2>Create an account</h2>
+    </div>
+
+<form  className="form" >
+    
+    <div className="form-control"> 
+        <label htmlFor="Fname">First Name</label>
+        <input type="text" id="Fname"
+            onChange={this.firsthandler} placeholder="First Name" />
+    </div>
+    <div className="form-control">
+        <label htmlFor="Lname">Last Name</label>
+        <input type="text" id="Lname" 
+            onChange={this.lasthandler}placeholder="Last Name" />
+    </div>
+    <div className="form-control">
+        <label htmlFor="age">Age</label>
+        <input type="number" id="age" placeholder="18 - 100" 
+            onChange={this.agehandler}min="18" max="100" />
+    </div>
+    <div className="form-control">
+        <label htmlFor="mobnum">Mobile Number</label>
+        <input type="tel" id="mobnum" placeholder="xxxxx xxxxx" 
+            onChange={this.mobilehandler} pattern="[0-9]{10}" />
+    </div>
+    <div className="form-control">
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email"
+            onChange={this.emailhandler} placeholder="abc@xxx.zzz" />
+    </div>
+    <div className="form-control textarea">
+        <label htmlFor="description">Description</label>
+        <textarea id="description" rows="5" cols="80" maxLength="120" />
+    </div>
+    <div className="form-control">
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" onChange={this.passwordhandler} />
+    </div>
+    <div className="form-control">
+        <label htmlFor="cnfpassword">Confirm Password</label>
+        <input type="password" id="cnfpassword"/>    
+    </div>
+    
+    <button className="btt" onClick={this.handlereset}><span>RESET </span></button>
+    <button onClick={this.handleSubmit}className="bttn" type="submit" ><span>SUBMIT </span></button>
+
+</form>
+</div>
+
+</div>
