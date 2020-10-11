@@ -115,22 +115,36 @@ textarea{
   margin-left: 22px;
 }
 
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  width: auto;
+  display: flex;
+}
+.banner{
+  flex: 1;
+  height: 650px;
+  width: 550px;
+}  
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.dtls{
+  
+  flex-grow: 2;
+}
 .bttn:hover{
     color: #4C3E79;
     background-color: #ffff;
     border: 2px solid #4C3E79;
   }
     
-    .container {
-      background-color: #fff;
-      border-radius: 5px;
-      overflow: hidden;
-      width: auto;
-    }
+    
     
     .header {
-      border-bottom: 1px solid #f0f0f0;
-      padding: 20px 40px;
+      padding: 0px 0px 40px 0;
     }
     
     .header h2 {
@@ -140,7 +154,7 @@ textarea{
     }
     
     .form {
-      padding: 30px 40px;	
+      padding: 30px 0px 30px 0px;
     }
     
     .form-control {
@@ -170,10 +184,11 @@ textarea{
 
     .personalDetails{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
     }
     .psndtls{
       flex: 2;
+      
     }
     .agedtls{
       flex: 1;

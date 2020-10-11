@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './CSS/styles.css'
-import * as Yup from "yup";
+import banner from "./img/banner.png"
 
 
 
@@ -64,10 +64,11 @@ class Details extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if(this.state.password === ""){ 
-             alert("enter passsword") 
-        }
-        else{
+            const { password, cnfpassword }= this.state;
+            if(password!== cnfpassword){
+                alert("passwords dont match");
+            }
+            else{
             alert(`${this.state.firstName} ${this.state.lastName}  Registered Successfully !!!!`)
             console.log(this.state);
             this.setState({
@@ -79,7 +80,7 @@ class Details extends Component {
                 password: "",
                 cnfpassword: "",
             })
-        }
+            }
     }
 
     handlereset = (event) => {
@@ -100,12 +101,17 @@ class Details extends Component {
     render() {
         return (
             <div className="container">
-            <div className="header">
-                <h2>Create an account</h2>
-            </div>
+                <div className="banner"> 
+                    <img src={banner} alt="banner" />
+                </div>
+                
         
         <form  className="form" >
-            <div className="personalDetails">
+            <div className="dtls">
+                <div className="header">
+                    <h2>Create an account</h2>
+                </div>
+                <div className="personalDetails">
                 <div className="form-control psndtls"> 
                     <label htmlFor="Fname">First Name</label>
                     <input type="text" id="Fname"
@@ -157,6 +163,7 @@ class Details extends Component {
             <button className="btt" onClick={this.handlereset}><span>RESET </span></button>
             <button onClick={this.handleSubmit} className="bttn" type="submit" ><span>SUBMIT </span></button>
         
+            </div>
         </form>
         </div>
         
